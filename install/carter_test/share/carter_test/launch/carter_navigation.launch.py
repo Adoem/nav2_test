@@ -36,7 +36,7 @@ def generate_launch_description():
 
     nav2_bringup_launch_dir = os.path.join(get_package_share_directory("nav2_bringup"), "launch")
 
-    rviz_config_dir = os.path.join(get_package_share_directory("carter_test"), "rviz2", "carter_navigation.rviz")
+    rviz_config_dir = os.path.join(get_package_share_directory("carter_test"), "rviz2", "tb3_navigation2.rviz")
 
     return LaunchDescription(
         [

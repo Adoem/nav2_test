@@ -78,7 +78,7 @@ bt_navigator:
     use_sim_time: True
     global_frame: map
     robot_base_frame: base_link
-    odom_topic: /chassis/odom
+    odom_topic: /odom
     bt_loop_duration: 20
     default_server_timeout: 40
     # 'default_nav_through_poses_bt_xml' and 'default_nav_to_pose_bt_xml' are use defaults:
@@ -145,7 +145,7 @@ velocity_smoother:
     velocity_timeout: 1.0 
     # max_accel: [1.0, 0.0, 1.25] 
     # max_decel: [-1.0, 0.0, -1.25] 
-    odom_topic: "chassis/odom" 
+    odom_topic: "/odom" 
     odom_duration: 0.1
 
 controller_server:
@@ -231,7 +231,7 @@ local_costmap:
       resolution: 0.05
       transform_tolerance: 0.3
       footprint: "[ [0.14, 0.25], [0.14, -0.25], [-0.607, -0.25], [-0.607, 0.25] ]"
-      plugins: ["hesai_voxel_layer", "front_rplidar_obstacle_layer", "back_rplidar_obstacle_layer", "inflation_layer"]
+      plugins: ["hesai_voxel_layer", "inflation_layer"]
       # plugins: ["hesai_voxel_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
@@ -250,7 +250,7 @@ local_costmap:
         unknown_threshold: 15
         observation_sources: pointcloud
         pointcloud:  # no frame set, uses frame from message
-          topic: /front_3d_lidar/lidar_points
+          topic: /scan
           max_obstacle_height: 2.0
           min_obstacle_height: 0.1
           obstacle_max_range: 10.0
@@ -260,26 +260,16 @@ local_costmap:
           clearing: True
           marking: True
           data_type: "PointCloud2"
-      front_rplidar_obstacle_layer:
-        plugin: "nav2_costmap_2d::ObstacleLayer"
-        enabled: True
-        observation_sources: scan
-        scan:
-          topic: /front_2d_lidar/scan
-          max_obstacle_height: 2.0
-          clearing: True
-          marking: True
-          data_type: "LaserScan"
-      back_rplidar_obstacle_layer:
-        plugin: "nav2_costmap_2d::ObstacleLayer"
-        enabled: True
-        observation_sources: scan
-        scan:
-          topic: /back_2d_lidar/scan
-          max_obstacle_height: 2.0
-          clearing: True
-          marking: True
-          data_type: "LaserScan"
+      # front_rplidar_obstacle_layer:
+      #   plugin: "nav2_costmap_2d::ObstacleLayer"
+      #   enabled: True
+      #   observation_sources: scan
+      #   scan:
+      #     topic: /scan
+      #     max_obstacle_height: 2.0
+      #     clearing: True
+      #     marking: True
+      #     data_type: "LaserScan"
   local_costmap_client:
     ros__parameters:
       use_sim_time: True
