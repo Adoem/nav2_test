@@ -12,13 +12,13 @@ amcl:
     beam_skip_error_threshold: 0.9
     beam_skip_threshold: 0.3
     do_beamskip: false
-    global_frame_id: "map"
+    global_frame_id: "world"
     lambda_short: 0.1
     laser_likelihood_max_dist: 2.0
     laser_max_range: 100.0
     laser_min_range: -1.0
     laser_model_type: "likelihood_field"
-    max_beams: 360
+    max_beams: 60
     max_particles: 2000
     min_particles: 500
     odom_frame_id: "odom"
@@ -39,7 +39,7 @@ amcl:
     z_rand: 0.5
     z_short: 0.05
     scan_topic: scan
-    map_topic: map
+    map_topic: world
     set_initial_pose: true
     always_reset_initial_pose: false
     first_map_only: false
@@ -61,7 +61,7 @@ map_server:
   ros__parameters:
     use_sim_time: True
     yaml_filename: "sample.yaml"
-    topic_name: "map"
+    topic_name: "world"
 
 map_saver:
   ros__parameters:
@@ -76,7 +76,7 @@ map_saver:
 bt_navigator:
   ros__parameters:
     use_sim_time: True
-    global_frame: map
+    global_frame: world
     robot_base_frame: base_link
     odom_topic: /odom
     bt_loop_duration: 20
@@ -231,7 +231,7 @@ local_costmap:
       resolution: 0.05
       transform_tolerance: 0.3
       footprint: "[ [0.14, 0.25], [0.14, -0.25], [-0.607, -0.25], [-0.607, 0.25] ]"
-      plugins: ["hesai_voxel_layer", "inflation_layer"]
+      plugins: ["hesai_voxel_layer", "obstacle_layer", "inflation_layer"]
       # plugins: ["hesai_voxel_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
@@ -260,16 +260,28 @@ local_costmap:
           clearing: True
           marking: True
           data_type: "PointCloud2"
-      # front_rplidar_obstacle_layer:
+      obstacle_layer:
+        plugin: "nav2_costmap_2d::ObstacleLayer"
+        enabled: True
+        observation_sources: scan
+        scan:
+          topic: /scan
+          max_obstacle_height: 2.0
+          clearing: True
+          marking: True
+          data_type: "LaserScan"
+
+      # back_rplidar_obstacle_layer:
       #   plugin: "nav2_costmap_2d::ObstacleLayer"
       #   enabled: True
       #   observation_sources: scan
       #   scan:
-      #     topic: /scan
+      #     topic: /back_2d_lidar/scan
       #     max_obstacle_height: 2.0
       #     clearing: True
       #     marking: True
       #     data_type: "LaserScan"
+
   local_costmap_client:
     ros__parameters:
       use_sim_time: True
@@ -285,13 +297,13 @@ global_costmap:
       footprint_padding: 0.25
       update_frequency: 1.0
       publish_frequency: 1.0
-      global_frame: map
+      global_frame: world
       robot_base_frame: base_link
       use_sim_time: True
       footprint: "[ [0.14, 0.25], [0.14, -0.25], [-0.607, -0.25], [-0.607, 0.25] ]"
-      # rolling_window: True
-      # width: 200
-      # height: 200
+      rolling_window: True
+      width: 10
+      height: 10
       resolution: 0.05
       # origin_x: -100.0
       # origin_y: -100.0
