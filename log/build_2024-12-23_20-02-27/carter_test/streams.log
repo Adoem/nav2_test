@@ -1,0 +1,48 @@
+[0.013s] Invoking command in '/home/adoem/nav2_test/build/carter_test': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/adoem/Robot_ws/turtlebot4_ws/install/turtlebot4_tests:/home/adoem/Robot_ws/turtlebot4_ws/install/turtlebot4_diagnostics:/home/adoem/Robot_ws/turtlebot3_ws/install/turtlebot3_teleop:/home/adoem/Robot_ws/turtlebot3_ws/install/turtlebot3_example:/home/adoem/IsaacSim_ws/IsaacSim-ros_workspaces/humble_ws/install/isaac_ros_navigation_goal:/opt/ros/humble /usr/bin/cmake /home/adoem/nav2_test/src/carter_test -DCMAKE_INSTALL_PREFIX=/home/adoem/nav2_test/install/carter_test
+[0.109s] -- The C compiler identification is GNU 11.4.0
+[0.170s] -- The CXX compiler identification is GNU 11.4.0
+[0.177s] -- Detecting C compiler ABI info
+[0.227s] -- Detecting C compiler ABI info - done
+[0.231s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.231s] -- Detecting C compile features
+[0.232s] -- Detecting C compile features - done
+[0.234s] -- Detecting CXX compiler ABI info
+[0.287s] -- Detecting CXX compiler ABI info - done
+[0.291s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.291s] -- Detecting CXX compile features
+[0.291s] -- Detecting CXX compile features - done
+[0.301s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.508s] -- Found Python3: /usr/bin/python3 (found version "3.10.16") found components: Interpreter 
+[0.657s] -- Configuring done
+[0.659s] -- Generating done
+[0.660s] -- Build files have been written to: /home/adoem/nav2_test/build/carter_test
+[0.662s] Invoked command in '/home/adoem/nav2_test/build/carter_test' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/adoem/Robot_ws/turtlebot4_ws/install/turtlebot4_tests:/home/adoem/Robot_ws/turtlebot4_ws/install/turtlebot4_diagnostics:/home/adoem/Robot_ws/turtlebot3_ws/install/turtlebot3_teleop:/home/adoem/Robot_ws/turtlebot3_ws/install/turtlebot3_example:/home/adoem/IsaacSim_ws/IsaacSim-ros_workspaces/humble_ws/install/isaac_ros_navigation_goal:/opt/ros/humble /usr/bin/cmake /home/adoem/nav2_test/src/carter_test -DCMAKE_INSTALL_PREFIX=/home/adoem/nav2_test/install/carter_test
+[0.664s] Invoking command in '/home/adoem/nav2_test/build/carter_test': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/adoem/Robot_ws/turtlebot4_ws/install/turtlebot4_tests:/home/adoem/Robot_ws/turtlebot4_ws/install/turtlebot4_diagnostics:/home/adoem/Robot_ws/turtlebot3_ws/install/turtlebot3_teleop:/home/adoem/Robot_ws/turtlebot3_ws/install/turtlebot3_example:/home/adoem/IsaacSim_ws/IsaacSim-ros_workspaces/humble_ws/install/isaac_ros_navigation_goal:/opt/ros/humble /usr/bin/cmake --build /home/adoem/nav2_test/build/carter_test -- -j24 -l24
+[0.692s] Invoked command in '/home/adoem/nav2_test/build/carter_test' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/adoem/Robot_ws/turtlebot4_ws/install/turtlebot4_tests:/home/adoem/Robot_ws/turtlebot4_ws/install/turtlebot4_diagnostics:/home/adoem/Robot_ws/turtlebot3_ws/install/turtlebot3_teleop:/home/adoem/Robot_ws/turtlebot3_ws/install/turtlebot3_example:/home/adoem/IsaacSim_ws/IsaacSim-ros_workspaces/humble_ws/install/isaac_ros_navigation_goal:/opt/ros/humble /usr/bin/cmake --build /home/adoem/nav2_test/build/carter_test -- -j24 -l24
+[0.700s] Invoking command in '/home/adoem/nav2_test/build/carter_test': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/adoem/Robot_ws/turtlebot4_ws/install/turtlebot4_tests:/home/adoem/Robot_ws/turtlebot4_ws/install/turtlebot4_diagnostics:/home/adoem/Robot_ws/turtlebot3_ws/install/turtlebot3_teleop:/home/adoem/Robot_ws/turtlebot3_ws/install/turtlebot3_example:/home/adoem/IsaacSim_ws/IsaacSim-ros_workspaces/humble_ws/install/isaac_ros_navigation_goal:/opt/ros/humble /usr/bin/cmake --install /home/adoem/nav2_test/build/carter_test
+[0.705s] -- Install configuration: ""
+[0.705s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/launch
+[0.705s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/launch/carter_navigation.launch.py
+[0.705s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/params
+[0.705s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/params/carter_navigation_params.yaml
+[0.705s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/Map
+[0.705s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/Map/sample.png
+[0.705s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/Map/sample.yaml
+[0.705s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/rviz2
+[0.705s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/rviz2/carter_navigation.rviz
+[0.706s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/ament_index/resource_index/package_run_dependencies/carter_test
+[0.706s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/ament_index/resource_index/parent_prefix_path/carter_test
+[0.706s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/environment/ament_prefix_path.sh
+[0.706s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/environment/ament_prefix_path.dsv
+[0.706s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/environment/path.sh
+[0.706s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/environment/path.dsv
+[0.706s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/local_setup.bash
+[0.706s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/local_setup.sh
+[0.706s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/local_setup.zsh
+[0.706s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/local_setup.dsv
+[0.706s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/package.dsv
+[0.707s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/ament_index/resource_index/packages/carter_test
+[0.707s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/cmake/carter_testConfig.cmake
+[0.707s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/cmake/carter_testConfig-version.cmake
+[0.707s] -- Installing: /home/adoem/nav2_test/install/carter_test/share/carter_test/package.xml
+[0.708s] Invoked command in '/home/adoem/nav2_test/build/carter_test' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/adoem/Robot_ws/turtlebot4_ws/install/turtlebot4_tests:/home/adoem/Robot_ws/turtlebot4_ws/install/turtlebot4_diagnostics:/home/adoem/Robot_ws/turtlebot3_ws/install/turtlebot3_teleop:/home/adoem/Robot_ws/turtlebot3_ws/install/turtlebot3_example:/home/adoem/IsaacSim_ws/IsaacSim-ros_workspaces/humble_ws/install/isaac_ros_navigation_goal:/opt/ros/humble /usr/bin/cmake --install /home/adoem/nav2_test/build/carter_test
