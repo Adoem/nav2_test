@@ -19,10 +19,10 @@ def generate_launch_description():
 
     use_sim_time = LaunchConfiguration("use_sim_time", default="True")
 
-    world_dir = LaunchConfiguration(
+    map_dir = LaunchConfiguration(
         "map",
         default=os.path.join(
-            get_package_share_directory("carter_test"), "Map", "sample.yaml"
+            get_package_share_directory("carter_test"), "map", "sample.yaml"
         ),
     )
 
@@ -40,7 +40,7 @@ def generate_launch_description():
 
     return LaunchDescription(
         [
-            DeclareLaunchArgument("map", default_value=world_dir, description="Full path to map file to load"),
+            DeclareLaunchArgument("Map", default_value=map_dir, description="Full path to map file to load"),
             DeclareLaunchArgument(
                 "params_file", default_value=param_dir, 
                 description="Full path to param file to load"
@@ -55,7 +55,7 @@ def generate_launch_description():
             ),
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([nav2_bringup_launch_dir, "/bringup_launch.py"]),
-                launch_arguments={"map": world_dir, "use_sim_time": use_sim_time, "params_file": param_dir}.items(),
+                launch_arguments={"map": map_dir, "use_sim_time": use_sim_time, "params_file": param_dir}.items(),
             ),
         ]
     )

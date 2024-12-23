@@ -12,7 +12,7 @@ amcl:
     beam_skip_error_threshold: 0.9
     beam_skip_threshold: 0.3
     do_beamskip: false
-    global_frame_id: "world"
+    global_frame_id: "map"
     lambda_short: 0.1
     laser_likelihood_max_dist: 2.0
     laser_max_range: 100.0
@@ -39,7 +39,7 @@ amcl:
     z_rand: 0.5
     z_short: 0.05
     scan_topic: scan
-    map_topic: world
+    map_topic: map
     set_initial_pose: true
     always_reset_initial_pose: false
     first_map_only: false
@@ -61,7 +61,7 @@ map_server:
   ros__parameters:
     use_sim_time: True
     yaml_filename: "sample.yaml"
-    topic_name: "world"
+    # topic_name: "map"
 
 map_saver:
   ros__parameters:
@@ -76,7 +76,7 @@ map_saver:
 bt_navigator:
   ros__parameters:
     use_sim_time: True
-    global_frame: world
+    global_frame: map
     robot_base_frame: base_link
     odom_topic: /odom
     bt_loop_duration: 20
@@ -271,17 +271,6 @@ local_costmap:
           marking: True
           data_type: "LaserScan"
 
-      # back_rplidar_obstacle_layer:
-      #   plugin: "nav2_costmap_2d::ObstacleLayer"
-      #   enabled: True
-      #   observation_sources: scan
-      #   scan:
-      #     topic: /back_2d_lidar/scan
-      #     max_obstacle_height: 2.0
-      #     clearing: True
-      #     marking: True
-      #     data_type: "LaserScan"
-
   local_costmap_client:
     ros__parameters:
       use_sim_time: True
@@ -289,15 +278,13 @@ local_costmap:
     ros__parameters:
       use_sim_time: True
 
-
-
 global_costmap:
   global_costmap:
     ros__parameters:
       footprint_padding: 0.25
       update_frequency: 1.0
       publish_frequency: 1.0
-      global_frame: world
+      global_frame: map
       robot_base_frame: base_link
       use_sim_time: True
       footprint: "[ [0.14, 0.25], [0.14, -0.25], [-0.607, -0.25], [-0.607, 0.25] ]"
@@ -336,7 +323,6 @@ global_costmap:
   global_costmap_rclcpp_node:
     ros__parameters:
       use_sim_time: True
-
 
 planner_server:
   ros__parameters:
@@ -400,4 +386,3 @@ waypoint_follower:
       plugin: "nav2_waypoint_follower::WaitAtWaypoint"
       enabled: True
       waypoint_pause_duration: 200
-
