@@ -1,3 +1,4 @@
+# Locatization
 amcl:
   ros__parameters:
     use_sim_time: True
@@ -43,8 +44,8 @@ amcl:
     always_reset_initial_pose: false
     first_map_only: false
     initial_pose:
-      x: -6.0
-      y: -1.0
+      x: 0.0
+      y: -10.0
       z: 0.0
       yaw: 3.14159
 
@@ -55,6 +56,23 @@ amcl_map_client:
 amcl_rclcpp_node:
   ros__parameters:
     use_sim_time: True
+
+map_server:
+  ros__parameters:
+    use_sim_time: True
+    yaml_filename: "sample.yaml"
+    topic_name: "map"
+
+map_saver:
+  ros__parameters:
+    use_sim_time: True
+    save_map_timeout: 5.0
+    free_thresh_default: 0.25
+    occupied_thresh_default: 0.65
+    # map_subscribe_transient_local: True
+
+# Nav2
+
 bt_navigator:
   ros__parameters:
     use_sim_time: True
@@ -317,18 +335,6 @@ global_costmap:
     ros__parameters:
       use_sim_time: True
 
-map_server:
-  ros__parameters:
-    use_sim_time: True
-    yaml_filename: "carter_warehouse_navigation.yaml"
-
-map_saver:
-  ros__parameters:
-    use_sim_time: True
-    save_map_timeout: 5000
-    free_thresh_default: 0.25
-    occupied_thresh_default: 0.65
-    map_subscribe_transient_local: True
 
 planner_server:
   ros__parameters:
