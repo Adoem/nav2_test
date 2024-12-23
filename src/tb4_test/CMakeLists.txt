@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(turtlebot4_navigation)
+project(tb4_test)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -20,7 +20,7 @@ find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
 
 install(
-  DIRECTORY config launch maps
+  DIRECTORY config launch Map
   DESTINATION share/${PROJECT_NAME}
 )
 
