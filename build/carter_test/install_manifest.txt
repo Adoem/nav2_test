@@ -2,6 +2,7 @@
 /home/adoem/nav2_test/install/carter_test/share/carter_test/params/carter_navigation_params.yaml
 /home/adoem/nav2_test/install/carter_test/share/carter_test/Map/sample.png
 /home/adoem/nav2_test/install/carter_test/share/carter_test/Map/sample.yaml
+/home/adoem/nav2_test/install/carter_test/share/carter_test/rviz2/tb3_navigation2.rviz
 /home/adoem/nav2_test/install/carter_test/share/carter_test/rviz2/carter_navigation.rviz
 /home/adoem/nav2_test/install/carter_test/share/ament_index/resource_index/package_run_dependencies/carter_test
 /home/adoem/nav2_test/install/carter_test/share/ament_index/resource_index/parent_prefix_path/carter_test
